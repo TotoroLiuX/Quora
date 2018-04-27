@@ -19,6 +19,8 @@ pytorch_v7 对代码做一些更改，基于自己电脑上的v6版本，对最后一层进行maxpooling
 
 pytorch_v8 考虑不使用self-attention-layer，基于v7进行更改
 
+pytorch_v9 复现笔记本电脑上的tensorflow_v7
+
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
 tensorflow_v3 
