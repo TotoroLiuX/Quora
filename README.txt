@@ -23,6 +23,7 @@ pytorch_v9 复现笔记本电脑上的tensorflow_v7
 
 pytorch_v10 基于版本v7，之前设计的代码有问题，最后一层不能对两个句子分开处理，应当一起处理，保持参数一致
             第一层self_attention要不要一起处理，暂时不确定（暂时分开处理）
+            GPU版本的v10句子长度为50（在小鹿的电脑上运行）
 
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
