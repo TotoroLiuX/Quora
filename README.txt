@@ -27,6 +27,8 @@ pytorch_v10 基于版本v7，之前设计的代码有问题，最后一层不能对两个句子分开处理，应
 
 pytorch_v11 对self-attention进行更改，我们不使用该self-attention层，新定义一个层，称之为filter_layer
 
+pytorch_v12 base_on v11, add fusion_layer
+
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
 tensorflow_v3 
