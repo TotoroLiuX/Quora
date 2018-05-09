@@ -29,10 +29,12 @@ pytorch_v11 对self-attention进行更改，我们不使用该self-attention层，新定义一个层
 
 pytorch_v12 base_on v11, add fusion_layer
 	    不加fusion_layer，多一层gru，其输出用于self-attention，self_attention也做相应改变
+            更改，去掉gru,目前结构为：filter(different from v11), gru, agg, gru, struc, max/mean pooling  dot, global(在小鹿电脑上）
 
 pytorch_v13 基于v12，对最后一层进行更改，暂时不用structured_attention，基于tensorflow_v7
+            更改，结构：filter(from v11),gru, agg, gru, struc, max/mean pooling, dot, global(在小鹿电脑上）
 
-pytorch_v14 基于v11，队aggregation_layer进行修改，参考笔记
+pytorch_v14 基于v11，队aggregation_layer进行修改，参考笔记(笔记上的还没有实现，暂时利用cosine距离)
 
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
