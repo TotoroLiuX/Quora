@@ -27,24 +27,29 @@ pytorch_v10 基于版本v7，之前设计的代码有问题，最后一层不能对两个句子分开处理，应
             GPU版本的v10句子长度为50（在小鹿的电脑上运行，已经结束）
 
 pytorch_v11 对self-attention进行更改，我们不使用该self-attention层，新定义一个层，称之为filter_layer（最好，0.84）
+            新加入一个参数，利用LSTM，还没有运行
 
 pytorch_v12 base_on v11, add fusion_layer
 	    不加fusion_layer，多一层gru，其输出用于self-attention，self_attention也做相应改变
             更改，去掉gru,目前结构为：filter(different from v11), gru, agg, gru, struc, max/mean pooling  dot, global(在小鹿电脑上，0.83）
 													  general,global（在小鹿电脑上，效果不好）
-													  dot, global（在小鹿电脑上重新跑）
+													  dot, global（在小鹿电脑上重新跑,0.83）
+            将LSTM也加进去，还没有测试
 
 pytorch_v13 基于v12，对最后一层进行更改，暂时不用structured_attention，基于tensorflow_v7
             更改，结构：filter(from v11),gru, agg, gru, struc, max/mean pooling, dot, global(在小鹿电脑上，0.83）
-                                                                                 general,global（在小鹿电脑上，未测试，不知道效果）
-										 dot, global（在小鹿电脑上重新跑）
+                                                                                 general,global（在小鹿电脑上，未测试，不知道效果，重新跑）
+										 dot, global（在小鹿电脑上重新跑,0.83）
 
 pytorch_v14 基于v11，队aggregation_layer进行修改，参考笔记(笔记上的还没有实现，暂时利用cosine距离)，
-            在实验室电脑上跑，效果看似还行0.83，电脑崩了，在小鹿电脑上跑
+            在实验室电脑上跑，效果看似还行0.83，电脑崩了，在小鹿电脑上跑0.83
 
 pytorch_v15 基于v11，对aggregation_layer进行修改，参考笔记（在笔记本上跑，比较慢，效果也一般，已暂停）
+            准备在小鹿电脑上跑
 
-pytroch_v16 对aggregation的regional attention 进行更改，使其更合理（还未完成）
+pytroch_v16 对aggregation的regional attention 进行更改，使其更合理（还未完成，已完成，还未运行）
+
+pytorch_v17 同样对aggregation进行处理，对attention部分进行处理
 
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
