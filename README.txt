@@ -37,7 +37,7 @@ pytorch_v12 base_on v11, add fusion_layer
 													  dot, global（在小鹿电脑上重新跑,0.83）
             将LSTM也加进去，还没有测试filter, lstm, agg, lstm, struc, max/mean pooling  dot, global lr=0.001（小鹿，0.84, 0.85）
                                                                                                     lr=0.0005 0.84
-                                                                                                    lr=0.0001
+                                                                                                    lr=0.0001 0.83
 ===========
 pytorch_v13 基于v12，对最后一层进行更改，暂时不用structured_attention，基于tensorflow_v7
             更改，结构：filter(from v11),gru, agg, gru, struc, max/mean pooling, dot, global(在小鹿电脑上，0.83）
