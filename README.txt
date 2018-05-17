@@ -36,16 +36,20 @@ pytorch_v12 base_on v11, add fusion_layer
 													  general,global（在小鹿电脑上，效果不好）
 													  dot, global（在小鹿电脑上重新跑,0.83）
             将LSTM也加进去，还没有测试filter, lstm, agg, lstm, struc, max/mean pooling  dot, global lr=0.001（小鹿，0.84, 0.85）
-                                                                                                    lr=0.0005 0.84
-                                                                                                    lr=0.0001 0.83
+                                                                                                    lr=0.0005 （0.84）
+                                                                                                    lr=0.0001 （0.83）
+                                                                                                    lr=0.005   （0.5，very bad）
+                                                                                                    hidden_size=100
 ===========
 pytorch_v13 基于v12，对最后一层进行更改，暂时不用structured_attention，基于tensorflow_v7
             更改，结构：filter(from v11),gru, agg, gru, struc, max/mean pooling, dot, global(在小鹿电脑上，0.83）
                                                                                  general,global（在小鹿电脑上，未测试，不知道效果，重新跑）
 										 dot, global（在小鹿电脑上重新跑,0.83）
             将GRU换为LSTM，filter,lstm,agg,lstm,struc,max/maen pooling  dot, global lr=0.001（小鹿，0.85, 0.85）
-                                                                                    lr=0.0005 0.84
-                                                                                    lr=0.0001
+                                                                                    lr=0.0005 （0.84）
+                                                                                    lr=0.0001 （0.83）
+                                                                                    lr=0.001 len=50 （0.8448）
+                                                                                    dropout=0.5
 
 pytorch_v14 基于v11，队aggregation_layer进行修改，参考笔记(笔记上的还没有实现，暂时利用cosine距离)，
             在实验室电脑上跑，效果看似还行0.83，电脑崩了，在小鹿电脑上跑0.83
@@ -56,17 +60,24 @@ pytorch_v15 基于v11，对aggregation_layer进行修改，参考笔记（在笔记本上跑，比较慢
 pytroch_v16 对aggregation的regional attention 进行更改，使其更合理（还未完成，已完成，还未运行）
             filter(v11), lstm, agg, lstm, struc, max pooling, dot,regional （太慢了，而且目前效果不好，0.8277）
 
-===========
+
 pytorch_v17 同样对aggregation进行处理，对attention部分进行处理，结合 词与词之间的attention，以及 词与句子间的attention
             filter(v11), lstm, agg, lstm, new_att, （cross_entropy）dot,global，n_perspective＝1，效果不好
                                                                                 n_perspective＝5, 效果不好
-                                                                                n_perspective=20,
+                                                                                n_perspective=20, 效果不好
 
 ===========
-pytorch_v18 基于v13，filter(v11), lstm, agg(ESIM), lstm, struc, max/mean pooling, dot,global lr=0.001
+pytorch_v18 基于v13，filter(v11), lstm, agg(ESIM no *), lstm, struc, max/mean pooling, dot,global lr=0.001  （0.8451）
+                                        agg(ESIM)                                                           （0.8499）
+                                                                                                  n_per=50   （）
 
 ===========
-pytorch_v19 基于v13, filter(v11), lstm, agg, lstm, struc(real struc), max/mean pooling, dot,global lr=0.001
+pytorch_v19 基于v13, filter(v11), lstm, agg, lstm, struc(real struc), max/mean pooling, dot,global lr=0.001 （0.8434）
+                                                                                                   lr=0.0005 （0.8431）
+                                                                                                   based on lr=0.001, set lr=0.0005 （0.8485）
+                                        agg(ESIM)                                                  （）
+===========
+pytorch_v20 基于v17, filter(v11), lstm, agg(word2word, word2sentence), lstm, struc, max/mean pooling, dot,global lr=0.001
 
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
