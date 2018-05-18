@@ -39,7 +39,10 @@ pytorch_v12 base_on v11, add fusion_layer
                                                                                                     lr=0.0005 £¨0.84£©
                                                                                                     lr=0.0001 £¨0.83£©
                                                                                                     lr=0.005   £¨0.5£¬very bad£©
-                                                                                                    hidden_size=100
+                                                                                                    hidden_size=100 £¨0.8449£©
+                                                                                                    hidden_size=150 £¨²»ºÃ£©why?
+                                      lstm, agg, lstm, struc, max/mean pooling  dot, global lr=0.001
+
 ===========
 pytorch_v13 »ùÓÚv12£¬¶Ô×îºóÒ»²ã½øÐÐ¸ü¸Ä£¬ÔÝÊ±²»ÓÃstructured_attention£¬»ùÓÚtensorflow_v7
             ¸ü¸Ä£¬½á¹¹£ºfilter(from v11),gru, agg, gru, struc, max/mean pooling, dot, global(ÔÚÐ¡Â¹µçÄÔÉÏ£¬0.83£©
@@ -49,7 +52,9 @@ pytorch_v13 »ùÓÚv12£¬¶Ô×îºóÒ»²ã½øÐÐ¸ü¸Ä£¬ÔÝÊ±²»ÓÃstructured_attention£¬»ùÓÚtenso
                                                                                     lr=0.0005 £¨0.84£©
                                                                                     lr=0.0001 £¨0.83£©
                                                                                     lr=0.001 len=50 £¨0.8448£©
-                                                                                    dropout=0.5
+                                                                                    dropout=0.5 £¨0.7752£©
+                                                                                    dropout=0.2 £¨0.8327£©
+                                                                                    dropout=0   £¨£©
 
 pytorch_v14 »ùÓÚv11£¬¶Óaggregation_layer½øÐÐÐÞ¸Ä£¬²Î¿¼±Ê¼Ç(±Ê¼ÇÉÏµÄ»¹Ã»ÓÐÊµÏÖ£¬ÔÝÊ±ÀûÓÃcosine¾àÀë)£¬
             ÔÚÊµÑéÊÒµçÄÔÉÏÅÜ£¬Ð§¹û¿´ËÆ»¹ÐÐ0.83£¬µçÄÔ±ÀÁË£¬ÔÚÐ¡Â¹µçÄÔÉÏÅÜ0.83
@@ -69,7 +74,7 @@ pytorch_v17 Í¬Ñù¶Ôaggregation½øÐÐ´¦Àí£¬¶Ôattention²¿·Ö½øÐÐ´¦Àí£¬½áºÏ ´ÊÓë´ÊÖ®¼äµ
 ===========
 pytorch_v18 »ùÓÚv13£¬filter(v11), lstm, agg(ESIM no *), lstm, struc, max/mean pooling, dot,global lr=0.001  £¨0.8451£©
                                         agg(ESIM)                                                           £¨0.8499£©
-                                                                                                  n_per=50   £¨£©
+                                                                                                  n_per=50   £¨0.8480£©
 
 ===========
 pytorch_v19 »ùÓÚv13, filter(v11), lstm, agg, lstm, struc(real struc), max/mean pooling, dot,global lr=0.001 £¨0.8434£©
@@ -77,7 +82,8 @@ pytorch_v19 »ùÓÚv13, filter(v11), lstm, agg, lstm, struc(real struc), max/mean p
                                                                                                    based on lr=0.001, set lr=0.0005 £¨0.8485£©
                                         agg(ESIM)                                                  £¨£©
 ===========
-pytorch_v20 »ùÓÚv17, filter(v11), lstm, agg(word2word, word2sentence), lstm, struc, max/mean pooling, dot,global lr=0.001
+pytorch_v20 »ùÓÚv17, filter(v11), lstm, agg(word2word, word2sentence), lstm, struc, max/mean pooling, dot,global lr=0.001 ²»ºÃ
+                     filter(v11), lstm, agg(new), lstm, struc£¨v19£©, max/mean pooling, dot,global
 
 pytorch_v_test »ùÓÚv4ÐÞ¸Ä´úÂë£¬Ö÷ÒªÊÇÊµÏÖglobal attentionºÍlocal attention
 
