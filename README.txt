@@ -41,7 +41,7 @@ pytorch_v12 base_on v11, add fusion_layer
                                                                                                     lr=0.005   （0.5，very bad）
                                                                                                     hidden_size=100 （0.8449）
                                                                                                     hidden_size=150 （不好）why?
-                                      lstm, agg, lstm, struc, max/mean pooling  dot, global lr=0.001
+                                      lstm, agg, lstm, struc, max/mean pooling  dot, global lr=0.001  （0.8424）
 
 ===========
 pytorch_v13 基于v12，对最后一层进行更改，暂时不用structured_attention，基于tensorflow_v7
@@ -80,10 +80,13 @@ pytorch_v18 基于v13，filter(v11), lstm, agg(ESIM no *), lstm, struc, max/mean po
 pytorch_v19 基于v13, filter(v11), lstm, agg, lstm, struc(real struc), max/mean pooling, dot,global lr=0.001 （0.8434）
                                                                                                    lr=0.0005 （0.8431）
                                                                                                    based on lr=0.001, set lr=0.0005 （0.8485）
-                                        agg(ESIM)                                                  （）
+                                        agg(ESIM)                                                  （0.8489）
 ===========
 pytorch_v20 基于v17, filter(v11), lstm, agg(word2word, word2sentence), lstm, struc, max/mean pooling, dot,global lr=0.001 不好
                      filter(v11), lstm, agg(new), lstm, struc（v19）, max/mean pooling, dot,global
+
+===========
+pytorch_v21 filter(v11), lstm, agg (ESIM), lstm, struc, sen_agg, max dot,global 
 
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
