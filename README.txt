@@ -88,7 +88,9 @@ pytorch_v20 基于v17, filter(v11), lstm, agg(word2word, word2sentence), lstm, str
                                                                                               50d   5_perspective    （0.8512）
                                                                                              100d  20_perspective    （0.5000）    lr0.0005   （0.8604）
                                                                                              150d  20_perspective    （0.5000）    lr0.0005   （0.8635）
-                                                                                             150d  50_perspective    （0.5000）    lr0.0005
+                                                                                             150d  50_perspective    （0.5000）    lr0.0005   （0.5000）  lr0.0001 （0.8584）
+                                                                                             300d  20_perspective  0.1drop 0.0001lr  （）
+                                                                                             300d  5_perspective  0.1drop 0.0001lr   （）
 
 ===========
 pytorch_v21 filter(v11), lstm, agg (ESIM), lstm, struc, sen_agg, max dot,global  （0.8520）
@@ -96,6 +98,9 @@ pytorch_v21 filter(v11), lstm, agg (ESIM), lstm, struc, sen_agg, max dot,global 
                                                                                              50d 0.0001lr 0.1drop 20per  （0.8425）
                                                                                              50d 0.0005lr 0.1drop 20per  （0.5000）
                                                                                             150d 0.0001lr 0.1drop 20per  （0.8584）
+                                                                                            300d 20per 0.1drop 0.0001lr  （）
+                                                                                            300d 20per 0.2drop 0.0001lr  （）
+                                                                                            300d 20per 0.0drop 0.0001lr  （）
 
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
