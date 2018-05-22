@@ -86,8 +86,8 @@ pytorch_v19 基于v13, filter(v11), lstm, agg, lstm, struc(real struc), max/mean p
 pytorch_v20 基于v17, filter(v11), lstm, agg(word2word, word2sentence), lstm, struc, max/mean pooling, dot,global lr=0.001 不好
                      filter(v11), lstm, agg(new), lstm, struc（v19）, max/mean pooling, dot,global  （0.8522）
                                                                                               50d   5_perspective    （0.8512）
-                                                                                             100d  20_perspective    （0.5000）    lr0.0005
-                                                                                             150d  20_perspective    （0.5000）    lr0.0005
+                                                                                             100d  20_perspective    （0.5000）    lr0.0005   （0.8604）
+                                                                                             150d  20_perspective    （0.5000）    lr0.0005   （0.8635）
                                                                                              150d  50_perspective    （0.5000）    lr0.0005
 
 ===========
