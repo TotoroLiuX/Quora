@@ -54,7 +54,8 @@ pytorch_v13 基于v12，对最后一层进行更改，暂时不用structured_attention，基于tenso
                                                                                     lr=0.001 len=50 （0.8448）
                                                                                     dropout=0.5 （0.7752）
                                                                                     dropout=0.2 （0.8327）
-                                                                                    dropout=0   （）
+                                                                                    dropout=0   （0.8454）
+                           filter(general),lstm,agg(new),lstm,struc,max/maen pooling  dot, global dropout=0 （）
 
 pytorch_v14 基于v11，队aggregation_layer进行修改，参考笔记(笔记上的还没有实现，暂时利用cosine距离)，
             在实验室电脑上跑，效果看似还行0.83，电脑崩了，在小鹿电脑上跑0.83
@@ -83,10 +84,18 @@ pytorch_v19 基于v13, filter(v11), lstm, agg, lstm, struc(real struc), max/mean p
                                         agg(ESIM)                                                  （0.8489）
 ===========
 pytorch_v20 基于v17, filter(v11), lstm, agg(word2word, word2sentence), lstm, struc, max/mean pooling, dot,global lr=0.001 不好
-                     filter(v11), lstm, agg(new), lstm, struc（v19）, max/mean pooling, dot,global
+                     filter(v11), lstm, agg(new), lstm, struc（v19）, max/mean pooling, dot,global  （0.8522）
+                                                                                              50d   5_perspective    （0.8512）
+                                                                                             100d  20_perspective    （0.5000）
+                                                                                             150d  20_perspective    （0.5000）
+                                                                                             150d  50_perspective    （0.5000）
 
 ===========
-pytorch_v21 filter(v11), lstm, agg (ESIM), lstm, struc, sen_agg, max dot,global 
+pytorch_v21 filter(v11), lstm, agg (ESIM), lstm, struc, sen_agg, max dot,global  （0.8520）
+            filter(v11), lstm, agg (new)-(relu_linear), lstm, struc, sen_agg(ESIM)-(relu_linear), max dot,global  （）
+                                                                                             50d 0.0001lr 0.1drop 20per  （0.8425）
+                                                                                             50d 0.0005lr 0.1drop 20per  （0.5000）
+                                                                                            150d 0.0001lr 0.1drop 20per  （0.8584）
 
 pytorch_v_test 基于v4修改代码，主要是实现global attention和local attention
 
